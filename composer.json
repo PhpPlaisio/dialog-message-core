@@ -13,7 +13,7 @@
   "require": {
     "php": ">=7.3",
     "plaisio/dialog-message": "dev-master",
-    "plaisio/html": "^1.1",
+    "plaisio/helper-html": "^1.1",
     "plaisio/web-assets": "^1.2"
   },
   "require-dev": {
