@@ -1,0 +1,33 @@
+{
+  "name": "plaisio/dialog-message-core",
+  "description": "PhpPlaisio: Core Dialog Message",
+  "keywords": [
+    "PhpPlaisio",
+    "Dialog",
+    "Message",
+    "Core"
+  ],
+  "license": "MIT",
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+  "require": {
+    "php": ">=7.3",
+    "plaisio/dialog-message": "dev-master",
+    "plaisio/html": "^1.1",
+    "plaisio/web-assets": "^1.2"
+  },
+  "require-dev": {
+    "phing/phing": "^2.0",
+    "phpunit/phpunit": "^9.0",
+    "plaisio/console": "^2.2"
+  },
+  "autoload": {
+    "psr-4": {
+      "Plaisio\\DialogMessage\\": "src/"
+    }
+  },
+  "config": {
+    "bin-dir": "bin/",
+    "sort-packages": true
+  }
+}
