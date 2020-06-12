@@ -8,11 +8,9 @@
     "Core"
   ],
   "license": "MIT",
-  "minimum-stability": "dev",
-  "prefer-stable": true,
   "require": {
     "php": ">=7.3",
-    "plaisio/dialog-message": "dev-master",
+    "plaisio/dialog-message": "1.0",
     "plaisio/helper-html": "^1.1",
     "plaisio/web-assets": "^1.2"
   },
