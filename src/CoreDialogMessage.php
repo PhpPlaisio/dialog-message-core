@@ -130,7 +130,7 @@ class CoreDialogMessage extends PlaisioObject implements DialogMessage
              $this->modal,
              $this->buttons,
              $this->closeIds];
-    $this->nub->assets->jsAdmClassSpecificFunctionCall(__CLASS__, 'dialog', $args);
+    $this->nub->assets->jsAdmFunctionCall(__CLASS__, 'dialog', $args);
   }
 
   //--------------------------------------------------------------------------------------------------------------------
