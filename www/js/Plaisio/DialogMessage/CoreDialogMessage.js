@@ -17,8 +17,28 @@ define(
       let $div = $('<div></div>');
       $div.html(message);
 
+      let redirect = function (url) {
+        let duration;
+
+        if (url) {
+          if (hide) {
+            if (hide.duration) {
+              duration = hide.duration;
+            } else {
+              duration = 400;
+            }
+          } else {
+            duration = 0;
+          }
+
+          setTimeout(function () {window.location.href = url;}, duration);
+        }
+      }
+
       for (let i = 0; i < buttons.length; i++) {
-        buttons[i].click = function () {};
+        let url = buttons[i].url;
+        buttons[i].click = function () {redirect(url);};
+        delete buttons[i].url;
       }
 
       $div.dialog({
@@ -30,7 +50,6 @@ define(
       });
 
       let close = function () {$div.dialog('close');};
-
       for (let i = 0; i < closeIds.length; i++) {
         $('#' + closeIds[i]).click(close);
       }
