@@ -3,9 +3,10 @@
 /bin/
 /composer.lock
 /lib/psql/babel-core
+/node_modules
+/package-lock.json
 /test/coverage.xml
 /test/etc/columns.txt
 /test/etc/routines.json
 /test/report/
 /vendor/
-/www/js/jquery/
