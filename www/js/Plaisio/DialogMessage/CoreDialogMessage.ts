@@ -1,5 +1,5 @@
 /**
- * Class for showing, hiding, nd closing dialog messages.
+ * Class for dialog messages.
  */
 export class CoreDialogMessage
 {
