@@ -1,3 +1,5 @@
+import TriggeredEvent = JQuery.TriggeredEvent;
+
 /**
  * Class for dialog messages.
  */
@@ -78,9 +80,21 @@ export class CoreDialogMessage
   /**
    * Closes this dialog message.
    */
-  private close(): void
+  public close(): void
   {
     (this.$div as any).dialog('close');
+  }
+
+  //--------------------------------------------------------------------------------------------------------------------
+  /**
+   * Install an event handler.
+   *
+   * @param event The name of the event.
+   * @param callback
+   */
+  public on(event: string, callback: (event: TriggeredEvent, ui: any) => void): void
+  {
+    (this.$div as any).on(event, callback);
   }
 
   //--------------------------------------------------------------------------------------------------------------------
@@ -143,6 +157,12 @@ export class CoreDialogMessage
         show:    CoreDialogMessage.showParameters,
         hide:    CoreDialogMessage.hideParameters
       });
+
+    const that = this;
+    (this.$div as any).on('dialogclose', function ()
+    {
+      that.$div.remove();
+    });
   }
 
   //--------------------------------------------------------------------------------------------------------------------
@@ -195,3 +215,4 @@ export class CoreDialogMessage
 }
 
 //----------------------------------------------------------------------------------------------------------------------
+// Plaisio\Console\Helper\TypeScript\TypeScriptMarkHelper::md5: da04cf094d41d27b54b4d450e40690b6
