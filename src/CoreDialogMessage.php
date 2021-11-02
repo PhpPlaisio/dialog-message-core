@@ -18,42 +18,42 @@ class CoreDialogMessage extends PlaisioObject implements DialogMessage
    *
    * @var array
    */
-  private $buttons = [];
+  private array $buttons = [];
 
   /**
    * The IDs of the buttons that close the dialog on click.
    *
    * @var string[]
    */
-  private $closeIds = [];
+  private array $closeIds = [];
 
   /**
    * If false, the message is plain text. If true, the message is HTML code.
    *
    * @var bool
    */
-  private $isHtml;
+  private bool $isHtml = false;
 
   /**
    * The message of the dialog.
    *
    * @var string|null
    */
-  private $message;
+  private ?string $message = null;
 
   /**
    * If set to true, the dialog will have modal behavior.
    *
    * @var bool
    */
-  private $modal = false;
+  private bool $modal = false;
 
   /**
    * The title of the dialog.
    *
    * @var string|null
    */
-  private $title;
+  private ?string $title = null;
 
   //--------------------------------------------------------------------------------------------------------------------
   /**
