@@ -215,4 +215,4 @@ export class CoreDialogMessage
 }
 
 //----------------------------------------------------------------------------------------------------------------------
-// Plaisio\Console\Helper\TypeScript\TypeScriptMarkHelper::md5: da04cf094d41d27b54b4d450e40690b6
+// Plaisio\Console\TypeScript\Helper\MarkHelper::md5: da04cf094d41d27b54b4d450e40690b6

@@ -1,14 +1,10 @@
 /.idea/
-/.phpunit.result.cache
 /bin/
 /composer.lock
-/lib/psql/babel-core
-/node_modules
+/custom.task.properties
+/custom.type.properties
+/node_modules/
 /package-lock.json
-/test/coverage.xml
-/test/etc/columns.txt
-/test/etc/routines.json
-/test/report/
 /vendor/
 /www/js/**/*.js
 /www/js/**/*.map

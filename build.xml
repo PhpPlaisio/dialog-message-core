@@ -1,26 +1,42 @@
 <project name="PhpPlaisio: Core Menu" default="build" basedir=".">
-    <!-- Run composer update and executes various other updates -->
+    <!-- Update dependencies -->
     <target name="update">
         <exec executable="composer" checkreturn="true" passthru="true">
             <arg value="--ansi"/>
             <arg value="update"/>
         </exec>
-        <exec executable="npm" checkreturn="true" passthru="true">
+
+        <phing phingfile="build.xml" target="code-generation" haltonfailure="true"/>
+        <phing phingfile="build.xml" target="kernel" haltonfailure="true"/>
+        <phing phingfile="build.xml" target="outdated" haltonfailure="true"/>
+    </target>
+
+    <!-- Install dependencies -->
+    <target name="install">
+        <exec executable="composer" checkreturn="true" passthru="true">
             <arg value="--ansi"/>
-            <arg value="update"/>
+            <arg value="install"/>
         </exec>
 
+        <phing phingfile="build.xml" target="code-generation" haltonfailure="true"/>
         <phing phingfile="build.xml" target="kernel" haltonfailure="true"/>
+        <phing phingfile="build.xml" target="outdated" haltonfailure="true"/>
+    </target>
 
-        <!-- Show outdated packages -->
+    <!-- Show outdated dependencies -->
+    <target name="outdated">
         <exec executable="composer" checkreturn="true" passthru="true">
             <arg value="--ansi"/>
             <arg value="outdated"/>
             <arg value="--direct"/>
         </exec>
-        <exec executable="npm" checkreturn="true" passthru="true">
+    </target>
+
+    <target name="code-generation">
+        <exec executable="bin/plaisio" checkreturn="true" passthru="true">
             <arg value="--ansi"/>
-            <arg value="outdated"/>
+            <arg value="plaisio:type-script-automator"/>
+            <arg value="--once"/>
         </exec>
     </target>
 
@@ -29,11 +45,6 @@
             <arg value="--ansi"/>
             <arg value="plaisio:kernel-properties"/>
         </exec>
-    </target>
-
-    <!-- Runs all unit tests -->
-    <target name="unit">
-        <exec command="bin/phpunit" passthru="true" checkreturn="true"/>
     </target>
 
     <target name="build">
