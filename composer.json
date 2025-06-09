@@ -10,9 +10,9 @@
   "license": "MIT",
   "require": {
     "php": ">=8.3",
-    "plaisio/dialog-message": "^2.1.0",
-    "plaisio/helper-html": "^4.1.0",
-    "plaisio/web-assets": "^3.1.0"
+    "plaisio/dialog-message": "^2.2.0",
+    "plaisio/helper-html": "^4.2.0",
+    "plaisio/web-assets": "^3.2.0"
   },
   "require-dev": {
     "phing/phing": "^3.0.1",
